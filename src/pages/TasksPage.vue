@@ -26,7 +26,7 @@
             <div class="main-page__title">Выполненные задачи</div>
             <div
                 v-if="!completedTaskList.length"
-                class="main-page__prompt"
+                class="main-page__prompt main-page__prompt--dotted"
             >Пока что нет выполненных задач ...</div>
             <draggable
                 class="main-page__list"
@@ -232,6 +232,10 @@ $gap: 16px;
         pointer-events: none;
         border: 1px dashed gray;
         color: gray;
+
+        &--dotted {
+            border: 1px dotted gray;
+        }
     }
 }
 
