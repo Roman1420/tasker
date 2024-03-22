@@ -9,7 +9,7 @@ It's simple project - board for managing your tasks in browser.
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/Roman1420/tasker.git
 ```
 
 Go to the project directory
