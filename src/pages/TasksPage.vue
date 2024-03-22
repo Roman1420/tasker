@@ -2,6 +2,10 @@
     <div class="main-page">
         <div class="main-page__col">
             <div class="main-page__title">Текущие задачи</div>
+            <div
+                v-if="!taskList.length"
+                class="main-page__prompt"
+            >Нет текущих задач, Добби свободен!</div>
             <draggable
                 class="main-page__list"
                 :list="taskList"
@@ -20,6 +24,10 @@
         </div>
         <div class="main-page__col">
             <div class="main-page__title">Выполненные задачи</div>
+            <div
+                v-if="!completedTaskList.length"
+                class="main-page__prompt"
+            >Пока что нет выполненных задач ...</div>
             <draggable
                 class="main-page__list"
                 :list="completedTaskList"
@@ -164,6 +172,7 @@ $gap: 16px;
     gap: 24px;
 
     &__col {
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: $gap;
@@ -209,6 +218,20 @@ $gap: 16px;
                 cursor: grab;
             }
         }
+    }
+
+    &__prompt {
+        position: absolute;
+        padding: 32px 0;
+        width: 100%;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 16px;
+        font-weight: bold;
+        pointer-events: none;
+        border: 1px dashed gray;
+        color: gray;
     }
 }
 
