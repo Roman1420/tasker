@@ -2,24 +2,33 @@
 # Tasker
 
 It's simple project - board for managing your tasks in browser.
+    
 
+## Run Locally
 
+Clone the project
 
-## Installation
+```bash
+  git clone https://link-to-project
+```
 
-First after cloning project need to install all npm packages:
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
 
 ```bash
   npm install
 ```
 
-    
-## Deployment
-
-To deploy this project run
+Start the server
 
 ```bash
-  npm run deploy
+  npm run dev
 ```
+
 
 Finished!
