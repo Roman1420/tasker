@@ -30,6 +30,7 @@
                 @click="createTask"
             >создать</div>
             <div
+                v-if="task.id"
                 class="button button--warning"
                 @click="deleteTask"
             >удалить</div>
