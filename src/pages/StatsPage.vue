@@ -1,8 +1,14 @@
 <template>
     <div class="stats-page">
-        <div class="stats-page__item">Всего задач: {{ allTaskLength }}</div>
-        <div class="stats-page__item">Осталось сделать: {{ taskLength }}</div>
-        <div class="stats-page__item">Выполнено: {{ completedTaskLength }}</div>
+        <template v-if="allTaskLength">
+            <div class="stats-page__item">Всего задач: {{ allTaskLength }}</div>
+            <div class="stats-page__item">Осталось сделать: {{ taskLength }}</div>
+            <div class="stats-page__item">Выполнено: {{ completedTaskLength }}</div>
+        </template>
+        <div
+            v-else
+            class="stats-page__item"
+        >Нас ждут приключения! Переходи в раздел "Задачи", создавай новые - возможно здесь появится статистика ...</div>
     </div>
 </template>
 
@@ -29,7 +35,7 @@ export default defineComponent({
             taskLength: 0,
             completedTaskLength: 0
         }
-    },
+    }
 })
 </script>
 
@@ -44,6 +50,7 @@ export default defineComponent({
 
     &__item {
         font-size: 32px;
+        max-width: 500px;
     }
 }
 </style>
